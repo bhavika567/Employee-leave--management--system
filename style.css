@@ -1,0 +1,689 @@
+/* General styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #343a40;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for the login box */
+.sufee-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Login form container */
+.login-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form styling */
+.login-form {
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color:#333;
+    text-transform: uppercase;
+}
+
+input.form-control {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #333;
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+input.form-control:focus {
+    outline: none;
+    border-color: rgb(62, 156, 232);
+}
+
+/* Submit button */
+.btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+/* Message box */
+.result_msg {
+    margin-top: 15px;
+    color: #f00;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Responsive design */
+@media (max-width: 576px) {
+    .container {
+        padding: 20px;
+    }
+
+    .login-form {
+        margin-top: 30px;
+    }
+}
+/* General Reset and Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* Layout for left and right panels */
+#left-panel, #right-panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+#left-panel {
+    width: 250px;
+    background-color: #fff;
+    padding-top: 50px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: all 0.3s;
+    color: #333;
+}
+
+#right-panel {
+    margin-left: 250px;
+    margin-top: 80px; /* Push content down to make space for header */
+    width: calc(100% - 250px);
+}
+
+/* Header Styling */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header .navbar-header {
+    display: flex;
+    align-items: center;
+}
+.navbar-brand i {
+    margin-right:8px; /* Space between the icon and the text */
+    font-size: 1.5rem; /* Adjust the size of the icon */
+}
+#header h1 {
+    margin: 0;
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.menutoggle {
+    display: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* User-area and dropdown menu styles */
+.user-area {
+    position: relative;
+}
+
+.user-area a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.user-menu {
+    position: absolute;
+    right: 0;
+    background-color:#28a745;
+    border-radius: 4px;
+    display: none;
+}
+
+.user-area:hover .user-menu {
+    display: block;
+}
+
+.user-menu a {
+    color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.user-menu a:hover {
+    background-color: white;
+    color:black;
+}
+
+/* Left panel styles (Navigation) */
+.navbar-nav {
+    list-style: none;
+}
+
+.navbar-nav li {
+    padding: 10px 20px;
+}
+
+.navbar-nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 3px;
+}
+
+.navbar-nav a:hover {
+    color: #007bff;
+}
+
+/* Menu for Role-based navigation */
+.menu-title {
+    font-size: 1.2rem;
+    padding: 10px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.menu-item-has-children {
+    display: block;
+}
+
+.menu-item-has-children a {
+    padding-left: 30px;
+}
+
+/* Mobile Menu Toggle */
+@media (max-width: 768px) {
+    #left-panel {
+        left: -250px;
+        transition: left 0.3s ease;
+    }
+
+    #left-panel.active {
+        left: 0;
+    }
+
+    .menutoggle {
+        display: block;
+    }
+
+    #right-panel {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+/* Card Styling */
+.card {
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body-- {
+    padding: 20px;
+}
+
+/* Table Styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    text-align: left;
+    padding: 12px;
+    font-size: 14px;
+}
+
+.table th {
+    background-color: #28a745;
+    color: black;
+}
+
+.table td {
+    background-color: #f9f9f9;
+    color:black;
+    border-bottom: 1px solid #ddd;
+}
+
+.table tr:nth-child(even) td {
+    background-color: #f1f1f1;
+}
+
+.table td a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.table td a:hover {
+    text-decoration: underline;
+}
+
+/* Header Styling */
+h4.box-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+h4.box_title_link {
+    font-size: 14px;
+    color: #007bff;
+}
+
+h4.box_title_link a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+h4.box_title_link a:hover {
+    text-decoration: underline;
+}
+
+/* Select Dropdown */
+.form-control {
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button Styling */
+a.delete-btn {
+    color: #d9534f;
+    text-decoration: none;
+}
+
+a.delete-btn:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .table th, .table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    h4.box-title {
+        font-size: 18px;
+    }
+
+    h4.box_title_link {
+        font-size: 12px;
+    }
+}
+/* General Layout and Spacing */
+.content {
+    padding: 20px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body-- {
+    padding: 0 20px;
+}
+
+/* Table Styling */
+.table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Box Title Styling */
+.box-title {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.box_title_link a {
+    font-size: 1.1rem;
+    color: #28a745;
+    text-decoration: none;
+}
+
+.box_title_link a:hover {
+    text-decoration: underline;
+}
+
+/* Action Links */
+td a {
+    color: #dc3545;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+td a:nth-child(2) {
+    color: #dc3545;
+}
+
+td a:nth-child(2):hover {
+    text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .table th, .table td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .box-title {
+        font-size: 1.2rem;
+    }
+
+    .box_title_link a {
+        font-size: 1rem;
+    }
+}
+/* General Styling */
+.content {
+    padding: 20px;
+}
+
+/* Card Body Styling */
+.card-body {
+    padding: 20px;
+}
+
+/* Table Styling */
+.table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Box Title Styling */
+.box-title {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.box_title_link a {
+    font-size: 1.1rem;
+    color: #28a745;
+    text-decoration: none;
+}
+
+.box_title_link a:hover {
+    text-decoration: underline;
+}
+
+/* Action Links Styling */
+td a {
+    color: #007bff;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+td a:nth-child(2) {
+    color: #dc3545;
+}
+
+td a:nth-child(2):hover {
+    text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .table th, .table td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .box-title {
+        font-size: 1.2rem;
+    }
+
+    .box_title_link a {
+        font-size: 1rem;
+    }
+}
+/* Ensure the right panel takes full height */
+#right-panel {
+    margin-left: 250px;
+    margin-top: 50px; /* Space for the header */
+    width: calc(100% - 250px);
+    min-height: 100vh; /* Ensures the right panel takes up at least the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer styling */
+.site-footer {
+    margin-top: auto; /* Pushes the footer to the bottom of the container */
+    padding: 20px 0;
+    background-color: #f8f9fa;
+    color:black;
+}
+
+.footer-inner {
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-inner .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-inner .col-sm-6 {
+    font-size: 0.9rem;
+}
+
+/* Ensure content in the right panel is responsive */
+@media (max-width: 768px) {
+    .footer-inner .row {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* General Form Styling */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.card-header {
+    background-color: #28a745;
+    color: white;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body .form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    font-size: 1rem;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-group input[type="date"] {
+    cursor: pointer;
+}
+
+/* Focus and Hover Effects for Inputs */
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.form-group input::placeholder,
+.form-group select {
+    color: #777;
+}
+
+/* Button Styling */
+.btn {
+    background-color: #28a745;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color:#28a745;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0;
+        margin-top: 50px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .form-group input,
+    .form-group select {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+}
